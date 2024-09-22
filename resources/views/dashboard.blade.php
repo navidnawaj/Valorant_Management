@@ -1,9 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-
-            <p>I am a {{ auth()->user()->role == 'team' ? 'Team':'Player' }}</p>
+            <p>You Are A Team {{ auth()->user()->role == 'team' ? 'Captain':'Player' }}</p>
         </h2>
     </x-slot>
 
