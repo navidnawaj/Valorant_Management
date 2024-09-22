@@ -5,11 +5,19 @@
         </h2>
     </x-slot>
 
+ssssss
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @if(session('success'))
+                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                    <span class="font-medium">{{ session('success') }}</span>
+                </div>
+            @endif
+
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form action="{{url('/')}}/invite" method="post" class="max-w-sm mx-auto">
+                    <form action="{{ route('invite.player') }}" method="post" class="max-w-sm mx-auto">
                         @csrf
                         <div class="mb-6">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Player Email</label>
