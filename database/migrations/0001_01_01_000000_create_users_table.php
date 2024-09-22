@@ -17,6 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['player', 'team'])->default('team');
+            $table->string('sponsor')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('ign')->nullable();
+            $table->integer('age')->nullable();
+            $table->string('rank')->nullable();
+            $table->string('roles')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
