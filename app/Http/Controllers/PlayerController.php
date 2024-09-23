@@ -27,6 +27,7 @@ class PlayerController extends Controller
             'email' => $request->email,
             'password' => bcrypt($password),
             'role' => 'player',
+            // 'sponsor' => auth()->sponsor(),
         ]);
 
         // create team player

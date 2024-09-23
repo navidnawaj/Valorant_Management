@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ScrimController extends Controller
 {
+    public function index()
+    {
+        return view('scrims');
+    }
+
     public function request(Request $request)
     {
         $request->validate([
@@ -18,17 +23,22 @@ class ScrimController extends Controller
         Scrim::create([
             'team_from_id' => auth()->id(),
             'team_to_id' => $request->team_id,
-            'date' => Carbon::parse($request->date)->format('Y-m-d H:i:s'),
+            'date' => Carbon::parse($request->date)->format('Y-m-d'), 
+            'time' => Carbon::parse($request->time)->format('H:i:s'),
         ]);
 
         session()->flash('success', 'Scrim request sent successfully');
         return back();
 
+        return [
+            'team_id' => $request->team_id,
+            'date' => $request->date,
+            'time' => $request->time,
+        ];
 
-
-
-        // Scrim::where('team_to_id', auth()->id())->get();
+        
     }
+ 
 
     public function accept($id)
     {

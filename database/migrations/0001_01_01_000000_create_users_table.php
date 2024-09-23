@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('sponsor')->nullable();
             $table->string('dob')->nullable();
             $table->string('ign')->nullable();
-            $table->integer('age')->nullable();
             $table->string('rank')->nullable();
             $table->string('roles')->nullable();
             $table->rememberToken();

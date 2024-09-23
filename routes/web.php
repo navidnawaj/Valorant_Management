@@ -15,7 +15,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/invite/player',[PlayerController::class,'store'])->name('invite.player');
 
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-    Route::get('/scrim/request',[ScrimController::class,'request'])->name('scrim.request');
+
+    Route::get('/scrims',[ScrimController::class,'index'])->name('scrims');
+    Route::post('/dashboard/request',[ScrimController::class,'request'])->name('scrim.request');
 });
 
 
