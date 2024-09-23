@@ -10,7 +10,11 @@ class PlayerController extends Controller
 {
     public function index()
     {
-        return view('invite');
+        $current_team = auth()->user();
+        $team_players = $current_team->players->load('player');
+        // return $team_players;
+
+        return view('invite', compact('team_players'));
     }
 
     public function store(Request $request)
@@ -49,6 +53,14 @@ class PlayerController extends Controller
 
         session()->flash('success', 'Player created successfully');
 
+        return back();
+    }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+
+        session()->flash('success', 'Player deleted successfully');
         return back();
     }
 }

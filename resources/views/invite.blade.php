@@ -19,7 +19,7 @@
                         @csrf
                         <div class="mb-6">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Player Email</label>
-                            <input name="email" type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+                            <input name="email" type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
                         </div>
 
                         <div class="mb-6">
@@ -58,20 +58,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple MacBook Pro 17"
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Silver
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Laptop
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Remove From Team</a>
-                                    </td>
-                                </tr>
+                                @foreach ($team_players as $team_player)
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {{ $team_player?->player?->ign ?? 'No IGN' }}
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            {{ $team_player?->player?->rank ?? 'No Rank' }}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {{ $team_player?->player?->roles ?? 'No Roles' }}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a onclick="return confirm('Are you sure to delete this player?')"
+                                                href="{{ route('player.delete', $team_player?->player?->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                Remove From Team
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

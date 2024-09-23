@@ -13,6 +13,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/invite',[PlayerController::class,'index'])->name('invite');
     Route::post('/invite/player',[PlayerController::class,'store'])->name('invite.player');
+    Route::get('/delete/player/{user}',[PlayerController::class,'delete'])->name('player.delete');
 
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
