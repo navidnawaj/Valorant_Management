@@ -4,9 +4,16 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Team Name')" />
+            <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+
+        <!-- Name -->
+        <div  class="mt-4">
+            <x-input-label for="team_name" :value="__('Team Name')" />
+            <x-text-input id="team_name" class="block mt-1 w-full" type="text" name="team_name" :value="old('team_name')" required autofocus autocomplete="team_name" />
+            <x-input-error :messages="$errors->get('team_name')" class="mt-2" />
         </div>
 
         <!-- Email Address -->

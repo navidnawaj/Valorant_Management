@@ -18,6 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
     Route::get('/scrims',[ScrimController::class,'index'])->name('scrims');
+    Route::get('/scrims/accept/{scrim}',[ScrimController::class,'acceptScrim'])->name('scrims.accept');
+    Route::get('/scrims/reject/{scrim}',[ScrimController::class,'rejectScrim'])->name('scrims.reject');
+    Route::post('/scrims/submit',[ScrimController::class,'submitScrim'])->name('scrims.submit');
     Route::post('/dashboard/request',[ScrimController::class,'request'])->name('scrim.request');
 });
 

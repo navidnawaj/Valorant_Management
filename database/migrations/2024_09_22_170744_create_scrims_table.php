@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('team_from_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('team_to_id')->constrained('users')->onDelete('cascade');
-            $table->dateTime('date');
-            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->date('date');
+            $table->time('time');
+            $table->enum('status', ['pending', 'accepted', 'rejected', 'finished'])->default('pending');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
