@@ -24,6 +24,12 @@
         </div>
 
         <div>
+            <x-input-label for="team_name" :value="__('Team Name')" />
+            <x-text-input id="team_name" name="team_name" type="text" class="mt-1 block w-full" :value="old('team_name', $user->team_name)" required autofocus autocomplete="team_name" />
+            <x-input-error class="mt-2" :messages="$errors->get('team_name')" />
+        </div>
+
+        <div>
             <x-input-label for="sponsor" :value="__('Sponsor')" />
             <x-text-input id="sponsor" name="sponsor" type="text" class="mt-1 block w-full" :value="old('sponsor', $user->sponsor)" required autofocus autocomplete="sponsor" />
             <x-input-error class="mt-2" :messages="$errors->get('sponsor')" />
