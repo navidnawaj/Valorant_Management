@@ -201,7 +201,16 @@
                                                                      <!-- Modal body -->
                                                                      <div class="p-4 md:p-5 space-y-4">
                                                                          <div class="mb-5">
-                                                                             <img height="200px" width="200px" src="{{ asset('images/'. $scheduled->image) }}" />
+                                                                             <img 
+                                                                                height="200" 
+                                                                                width="200" 
+                                                                                data-src="{{ asset('images/'. $scheduled->image) }}" 
+                                                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23d1d5db'%3ELoading...%3C/text%3E%3C/svg%3E"
+                                                                                alt="Scrim image"
+                                                                                class="lazy-img img-optimized"
+                                                                                loading="lazy"
+                                                                                decoding="async"
+                                                                            />
                                                                          </div>
                                                                      </div>
                                                                      <!-- Modal footer -->

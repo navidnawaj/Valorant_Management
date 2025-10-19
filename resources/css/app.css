@@ -2,7 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.grid-cols-7{
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+/* Custom utilities */
+@layer utilities {
+    .grid-cols-7 {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+    
+    /* Performance optimizations */
+    .will-change-transform {
+        will-change: transform;
+    }
+    
+    .gpu-accelerated {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    
+    /* Image optimization classes */
+    .img-optimized {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .lazy-img {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .lazy-img.loaded {
+        opacity: 1;
+    }
 }

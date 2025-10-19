@@ -1,0 +1,65 @@
+{
+    "name": "Valorant Management",
+    "short_name": "ValMgmt",
+    "description": "Valorant team and scrim management application",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f46e5",
+    "orientation": "portrait-primary",
+    "categories": ["games", "sports", "productivity"],
+    "lang": "en",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/1360655.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/1727109172.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Dashboard",
+            "short_name": "Dashboard",
+            "description": "Go to dashboard",
+            "url": "/dashboard",
+            "icons": [
+                {
+                    "src": "/favicon.ico",
+                    "sizes": "32x32"
+                }
+            ]
+        },
+        {
+            "name": "Scrims",
+            "short_name": "Scrims",
+            "description": "View scrims",
+            "url": "/scrims",
+            "icons": [
+                {
+                    "src": "/favicon.ico",
+                    "sizes": "32x32"
+                }
+            ]
+        }
+    ],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
+}

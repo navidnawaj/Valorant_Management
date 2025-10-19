@@ -18,4 +18,23 @@ export default {
     },
 
     plugins: [forms],
+    
+    // Performance optimizations
+    corePlugins: {
+        // Disable unused core plugins to reduce CSS size
+        preflight: true,
+    },
+    
+    // Safelist for dynamic classes
+    safelist: [
+        // Keep dynamic classes that might be added via JS
+        'grid-cols-7',
+        { pattern: /^flatpickr/ },
+        { pattern: /^toastr/ },
+        'lazy-img',
+        'loaded',
+        'img-optimized',
+        'will-change-transform',
+        'gpu-accelerated'
+    ]
 };
