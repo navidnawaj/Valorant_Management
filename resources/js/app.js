@@ -1,7 +1,6 @@
-import './bootstrap';
-
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+// Dynamically load Alpine to enable better code-splitting
+import('alpinejs').then((mod) => {
+    const Alpine = mod.default;
+    window.Alpine = Alpine;
+    Alpine.start();
+});
