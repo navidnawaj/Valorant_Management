@@ -11,4 +11,23 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    modulePreload: {
+        polyfill: false,
+    },
+    esbuild: {
+        drop: ['console', 'debugger'],
+    },
+    build: {
+        target: 'es2019',
+        sourcemap: false,
+        cssCodeSplit: true,
+        assetsInlineLimit: 4096,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    alpine: ['alpinejs'],
+                },
+            },
+        },
+    },
 });

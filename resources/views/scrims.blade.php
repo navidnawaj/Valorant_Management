@@ -201,7 +201,7 @@
                                                                      <!-- Modal body -->
                                                                      <div class="p-4 md:p-5 space-y-4">
                                                                          <div class="mb-5">
-                                                                             <img height="200px" width="200px" src="{{ asset('images/'. $scheduled->image) }}" />
+                                                                            <img height="200px" width="200px" loading="lazy" decoding="async" src="{{ asset('images/'. $scheduled->image) }}" />
                                                                          </div>
                                                                      </div>
                                                                      <!-- Modal footer -->

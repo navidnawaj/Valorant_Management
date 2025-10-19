@@ -17,7 +17,7 @@
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
+            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" loading="lazy" decoding="async" />
             <div class="relative min-h-screen flex flex-col items-center justify-top selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
@@ -76,8 +76,9 @@
                                             document.getElementById('docs-card-content').classList.add('!flex-row');
                                             document.getElementById('background').classList.add('!hidden');
                                         "
+                                        loading="lazy" decoding="async"
                                     />
-                                    <img class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block" src="{{ URL::to('/assets/1360655.png') }}">
+                                    <img class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block" src="{{ URL::to('/assets/1360655.png') }}" loading="lazy" decoding="async">
                                 </div>
                             </a>          
                         </div>
